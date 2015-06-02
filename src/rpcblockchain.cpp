@@ -79,12 +79,14 @@ double GetPoSKernelPS()
     while (pindex && nStakesHandled < nPoSInterval)
     {
         if (pindex->IsProofOfStake())
-        {
-            dStakeKernelsTriedAvg += GetDifficulty(pindex) * 4294967296.0;
-            nStakesTime += pindexPrevStake ? (pindexPrevStake->nTime - pindex->nTime) : 0;
-            pindexPrevStake = pindex;
-            nStakesHandled++;
-        }
+		double dNetworkMhps = GetDifficulty() * 4294.967296 / nTargetSpacingWork;
+		double dNetworkWeight = dStakeKernelsTriedAvg / nStakesTime;
+		if (dNetworkWeight != dNetworkWeight)
+		{
+			dNetworkWeight = 0;
+		}
+
+		Object obj;
 
         pindex = pindex->pprev;
     }
