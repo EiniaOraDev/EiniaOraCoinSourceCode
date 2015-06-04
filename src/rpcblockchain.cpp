@@ -80,10 +80,10 @@ double GetPoSKernelPS()
     {
         if (pindex->IsProofOfStake())
 		double dNetworkMhps = GetDifficulty() * 4294.967296 / nTargetSpacingWork;
-		double dNetstakeWeight = dStakeKernelsTriedAvg / nStakesTime;
-		if (dNetstakeWeight != dNetstakeWeight)
+		double dNetworkWeight = dStakeKernelsTriedAvg / nStakesTime;
+		if (dNetworkWeight != dNetworkWeight)
 		{
-			dNetstakeWeight = 0;
+			dNetworkWeight = 0;
 		}
 
 		Object obj;
