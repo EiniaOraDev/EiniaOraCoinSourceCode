@@ -79,20 +79,18 @@ double GetPoSKernelPS()
     while (pindex && nStakesHandled < nPoSInterval)
     {
         if (pindex->IsProofOfStake())
-		double dNetworkMhps = GetDifficulty() * 4294.967296 / nTargetSpacingWork;
-		double dNetworkWeight = dStakeKernelsTriedAvg / nStakesTime;
-		if (dNetworkWeight != dNetworkWeight)
-		{
-			dNetworkWeight = 0;
-		}
-
-		Object obj;
+        {
+            dStakeKernelsTriedAvg += GetDifficulty(pindex) * 4294967296.0;
+            nStakesTime += pindexPrevStake ? (pindexPrevStake->nTime - pindex->nTime) : 0;
+            pindexPrevStake = pindex;
+            nStakesHandled++;
+        }
 
         pindex = pindex->pprev;
-        {
     }
 
-    Object obj;
+    return dStakeKernelsTriedAvg / nStakesTime;
+}
 
 Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool fPrintTransactionDetail)
 {
