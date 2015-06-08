@@ -1,6 +1,10 @@
 EiniaOraCoin 0.4.4 BETA
 
+<<<<<<< HEAD
 Copyright (c) 2013 EiniaOraCoin Developers
+=======
+Copyright (c) 2015 EiniaOraCoin Developers
+>>>>>>> origin/master
 Copyright (c) 2011-2013 PPCoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file license.txt or http://www.opensource.org/licenses/mit-license.php.
